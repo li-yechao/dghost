@@ -1,5 +1,5 @@
-name: ghost
-title: ghost
+name: dGhost
+title: dGhost
 description: A Blocklet DAPP blocklet
 keywords:
   - blocklet
@@ -20,29 +20,44 @@ files:
   - dist
   - logo.png
   - screenshots
+  - ghost-5.90.1.tgz
 interfaces:
   - type: web
     name: publicUrl
     path: /
-    prefix: "*"
+    prefix: '*'
     port: BLOCKLET_PORT
     protocol: http
-community: ""
-documentation: ""
-homepage: ""
-license: ""
+community: ''
+documentation: ''
+homepage: ''
+license: ''
 payment:
   price: []
   share: []
 timeout:
   start: 60
 requirements:
-  server: ">=1.16.28"
-  os: "*"
-  cpu: "*"
+  server: '>=1.16.28'
+  os: '*'
+  cpu: '*'
 scripts:
   dev: npm run start
 environments: []
 capabilities: {}
 screenshots: []
 components: []
+navigation:
+  - id: ghost
+    title:
+      en: Ghost
+      zh: Ghost
+    icon: simple-icons:ghost
+    link: /ghost
+    section:
+      - dashboard
+      - sessionManager
+    role:
+      - owner
+      - admin
+      - member

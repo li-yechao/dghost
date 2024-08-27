@@ -1,12 +1,12 @@
 {
-  "name": "ghost",
+  "name": "dghost",
   "private": true,
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
     "lint": "tsc --noEmit && eslint src api/src --ext .mjs,.js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
-    "start": "cross-env NODE_ENV=development nodemon api/dev.ts -w api",
+    "start": "vite-node -c vite-server.config.ts -w api/dev.ts",
     "clean": "node scripts/build-clean.mjs",
     "bundle": "tsc --noEmit && npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
@@ -14,6 +14,7 @@
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "prepare": "npx simple-git-hooks",
+    "update:deps": "npx -y taze major -r -w -x '/nanoid|eslint|queue/' && pnpm install",
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "lint-staged": {
@@ -49,7 +50,11 @@
     "cors": "^2.8.5",
     "dotenv-flow": "^4.1.0",
     "express": "^4.19.2",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "express-http-proxy": "^2.1.1",
+    "get-port": "^7.1.0",
+    "tar": "^7.4.3",
+    "ufo": "^1.5.4"
   },
   "devDependencies": {
     "@arcblock/eslint-config": "^0.3.2",
@@ -59,6 +64,7 @@
     "@types/cors": "^2.8.17",
     "@types/dotenv-flow": "^3.3.3",
     "@types/express": "^4.17.21",
+    "@types/express-http-proxy": "^1.6.6",
     "@types/node": "^20.14.13",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -80,8 +86,10 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.2",
     "vite": "^5.3.5",
+    "vite-node": "^2.0.5",
     "vite-plugin-blocklet": "^0.9.1",
     "vite-plugin-svgr": "^4.2.0",
+    "vite-tsconfig-paths": "^5.0.1",
     "zx": "^8.1.4"
   },
   "importSort": {
@@ -96,5 +104,8 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
+  },
+  "resolutions": {
+    "vite-tsconfig-paths": "4.3.2"
   }
 }

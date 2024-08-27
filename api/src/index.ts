@@ -1,15 +1,20 @@
 import 'express-async-errors';
 
-import path from 'path';
+import { join } from 'path';
 
-import cookieParser from 'cookie-parser';
+import { getComponentMountPoint } from '@blocklet/sdk';
+import { env } from '@blocklet/sdk/lib/config';
 import cors from 'cors';
 import dotenv from 'dotenv-flow';
-import express, { ErrorRequestHandler } from 'express';
-import fallback from '@blocklet/sdk/lib/middlewares/fallback';
+import express from 'express';
+import proxy from 'express-http-proxy';
+import getPort from 'get-port';
+import { hasTrailingSlash, joinURL, parseURL, withTrailingSlash } from 'ufo';
 
+import { GHOST_BLOCKLET_DID } from './constants';
+import { authClient } from './libs/auth';
+import ghostManager from './libs/ghost-manager';
 import logger from './libs/logger';
-import routes from './routes';
 
 dotenv.config();
 
@@ -17,29 +22,17 @@ const { name, version } = require('../../package.json');
 
 export const app = express();
 
-app.set('trust proxy', true);
-app.use(cookieParser());
-app.use(express.json({ limit: '1 mb' }));
-app.use(express.urlencoded({ extended: true, limit: '1 mb' }));
+let proxyToGhost: ReturnType<typeof proxy> | undefined;
+
 app.use(cors());
 
-const router = express.Router();
-router.use('/api', routes);
-app.use(router);
-
-const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';
-
-if (isProduction) {
-  const staticDir = path.resolve(process.env.BLOCKLET_APP_DIR!, 'dist');
-  app.use(express.static(staticDir, { maxAge: '30d', index: false }));
-  app.use(fallback('index.html', { root: staticDir }));
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  app.use(<ErrorRequestHandler>((err, _req, res, _next) => {
-    logger.error(err.stack);
-    res.status(500).send('Something broke!');
-  }));
-}
+app.use('/', (req, res, next) => {
+  if (proxyToGhost) {
+    proxyToGhost(req, res, next);
+  } else {
+    next();
+  }
+});
 
 const port = parseInt(process.env.BLOCKLET_PORT!, 10);
 
@@ -47,3 +40,37 @@ export const server = app.listen(port, (err?: any) => {
   if (err) throw err;
   logger.info(`> ${name} v${version} ready on ${port}`);
 });
+
+(async () => {
+  await ghostManager.install({
+    archive: join(process.env.BLOCKLET_APP_DIR!, 'ghost-5.90.1.tgz'),
+    overwrite: false,
+    version: '5.90.1',
+  });
+
+  const ghostPort = await getPort({ port: 2369 });
+
+  const mountPoint = getComponentMountPoint(GHOST_BLOCKLET_DID);
+
+  await ghostManager.start({ url: joinURL(env.appUrl, mountPoint), port: ghostPort });
+
+  proxyToGhost = proxy(`http://localhost:${ghostPort}`, {
+    proxyReqPathResolver(req) {
+      const url = join(mountPoint, req.url);
+      return hasTrailingSlash(req.url) ? withTrailingSlash(url) : url;
+    },
+    async proxyReqOptDecorator(proxyReqOpts, srcReq) {
+      proxyReqOpts.headers ??= {};
+      proxyReqOpts.headers['X-Forwarded-Proto'] = 'https';
+      proxyReqOpts.headers.Host = parseURL(env.appUrl).host;
+
+      const did = srcReq.get('x-user-did');
+      if (did) {
+        const user = await authClient.getUser(did);
+        proxyReqOpts.headers['x-user-email'] = user.user.email;
+      }
+
+      return proxyReqOpts;
+    },
+  });
+})();

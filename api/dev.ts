@@ -1,5 +1,9 @@
-import { app } from './src';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { setupClient } from 'vite-plugin-blocklet';
 
-import('vite-plugin-blocklet').then(({ setupClient }) => {
-  setupClient(app);
+import { app, server } from './src';
+
+setupClient(app, {
+  server,
+  importMetaHot: import.meta.hot,
 });
