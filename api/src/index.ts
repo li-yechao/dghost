@@ -42,12 +42,6 @@ export const server = app.listen(port, (err?: any) => {
 });
 
 (async () => {
-  await ghostManager.install({
-    archive: join(process.env.BLOCKLET_APP_DIR!, 'ghost-5.90.1.tgz'),
-    overwrite: false,
-    version: '5.90.1',
-  });
-
   const ghostPort = await getPort({ port: 2369 });
 
   const mountPoint = getComponentMountPoint(GHOST_BLOCKLET_DID);

@@ -1,9 +1,9 @@
 name: dGhost
 title: dGhost
-description: A Blocklet DAPP blocklet
+description: Bring Ghost to Blocklet
 keywords:
-  - blocklet
-  - react
+  - blog
+  - ghost
 group: dapp
 did: z2qaL6E9od1SFDfKP8d9zAWPZq45jbY6wkCWt
 main: api/dist/index.js
@@ -20,6 +20,7 @@ files:
   - dist
   - logo.png
   - screenshots
+  - api/hooks/pre-start.js
   - ghost-5.90.1.tgz
 interfaces:
   - type: web
@@ -37,11 +38,13 @@ payment:
   share: []
 timeout:
   start: 60
+  script: 600
 requirements:
   server: '>=1.16.28'
   os: '*'
   cpu: '*'
 scripts:
+  preStart: node api/hooks/pre-start.js
   dev: npm run start
 environments: []
 capabilities: {}

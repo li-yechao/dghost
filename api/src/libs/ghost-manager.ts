@@ -6,22 +6,26 @@ import { join, relative } from 'path';
 import { env } from '@blocklet/sdk/lib/config';
 import { x } from 'tar';
 
+const CONFIG_FILENAME = 'config.production.json';
+
 class GhostManager {
   get ghostDir() {
+    return join(process.env.BLOCKLET_APP_DIR!, 'ghost_dist');
+  }
+
+  get ghostDataDir() {
     return join(env.dataDir, 'ghost');
   }
 
   get contentDir() {
-    return join(this.ghostDir, 'content');
+    return join(this.ghostDataDir, 'content');
   }
 
   get currentPath() {
     return join(this.ghostDir, 'current');
   }
 
-  async ensureContentDirs() {
-    await rm(join(this.contentDir, 'themes'), { recursive: true, force: true });
-
+  private async ensureContentDirs() {
     const dirs = ['apps', 'data', 'files', 'images', 'logs', 'media', 'public', 'settings', 'themes'];
     for (const dir of dirs) {
       await mkdir(join(this.contentDir, dir), { recursive: true });
@@ -32,9 +36,12 @@ class GhostManager {
       const themes = await readdir(currentThemesDir);
 
       for (const theme of themes) {
+        const p = join(this.contentDir, 'themes', theme);
+        await rm(p, { recursive: true, force: true });
+
         await symlink(
           relative(join(this.contentDir, 'themes'), join(this.ghostDir, 'current/content/themes', theme)),
-          join(this.contentDir, 'themes', theme),
+          p,
         );
       }
     }
@@ -66,6 +73,7 @@ class GhostManager {
         .on('error', (error) => reject(error));
     });
 
+    // link blocklets/[GHOST DID]/ghost/current to blocklets/[GHOST DID]/ghost/versions/[VERSION]
     await rm(this.currentPath, { force: true });
     await symlink(relative(this.ghostDir, ghostSrcDir), this.currentPath);
   }
@@ -76,7 +84,7 @@ class GhostManager {
     await this.ensureContentDirs();
 
     await writeFile(
-      join(this.ghostDir, 'config.production.json'),
+      join(this.ghostDataDir, CONFIG_FILENAME),
       JSON.stringify(
         {
           url,
@@ -87,7 +95,7 @@ class GhostManager {
           database: {
             client: 'sqlite3',
             connection: {
-              filename: './content/data/ghost.db',
+              filename: join(this.contentDir, 'data/ghost.db'),
             },
           },
           mail: {
@@ -98,7 +106,7 @@ class GhostManager {
           },
           process: 'local',
           paths: {
-            contentPath: './content',
+            contentPath: this.contentDir,
           },
         },
         null,
@@ -108,8 +116,13 @@ class GhostManager {
 
     this.stop();
 
-    this.ghostProcess = fork(join(this.currentPath, 'index.js'), {
-      cwd: this.ghostDir,
+    // TODO: symlink current and config.production.json to a temp folder of ghost blocklet instead of data dir,
+    // the data dir will be synced to did space
+    await rm(join(this.ghostDataDir, 'current'), { force: true, recursive: true });
+    await symlink(relative(this.ghostDataDir, join(this.ghostDir, 'current')), join(this.ghostDataDir, 'current'));
+
+    this.ghostProcess = fork(join(this.ghostDataDir, 'current/index.js'), {
+      cwd: this.ghostDataDir,
       env: { NODE_ENV: 'production' },
     });
   }
