@@ -39,10 +39,7 @@ class GhostManager {
         const p = join(this.contentDir, 'themes', theme);
         await rm(p, { recursive: true, force: true });
 
-        await symlink(
-          relative(join(this.contentDir, 'themes'), join(this.ghostDir, 'current/content/themes', theme)),
-          p,
-        );
+        await symlink(join(this.ghostDir, 'current/content/themes', theme), p);
       }
     }
   }
@@ -73,7 +70,7 @@ class GhostManager {
         .on('error', (error) => reject(error));
     });
 
-    // link blocklets/[GHOST DID]/ghost/current to blocklets/[GHOST DID]/ghost/versions/[VERSION]
+    // link ghost/current to ghost/versions/[VERSION]
     await rm(this.currentPath, { force: true });
     await symlink(relative(this.ghostDir, ghostSrcDir), this.currentPath);
   }
@@ -119,7 +116,7 @@ class GhostManager {
     // TODO: symlink current and config.production.json to a temp folder of ghost blocklet instead of data dir,
     // the data dir will be synced to did space
     await rm(join(this.ghostDataDir, 'current'), { force: true, recursive: true });
-    await symlink(relative(this.ghostDataDir, join(this.ghostDir, 'current')), join(this.ghostDataDir, 'current'));
+    await symlink(join(this.ghostDir, 'current'), join(this.ghostDataDir, 'current'));
 
     this.ghostProcess = fork(join(this.ghostDataDir, 'current/index.js'), {
       cwd: this.ghostDataDir,

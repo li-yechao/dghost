@@ -10,7 +10,7 @@
     "clean": "node scripts/build-clean.mjs",
     "bundle": "tsc --noEmit && npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
-    "bundle:api": "npm run clean && tsc -p tsconfig.api.json && blocklet bundle --compact --create-release",
+    "bundle:api": "npm run clean && tsc -p tsconfig.api.json && blocklet bundle --compact --create-release --external ghost_installer",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "prepare": "npx simple-git-hooks",
@@ -53,6 +53,7 @@
     "express-async-errors": "^3.1.1",
     "express-http-proxy": "^2.1.1",
     "get-port": "^7.1.0",
+    "ghost_installer": "file:./ghost_installer-0.0.1.tgz",
     "tar": "^7.4.3",
     "ufo": "^1.5.4"
   },

@@ -1,0 +1,14 @@
+{
+  "name": "ghost_installer",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "tar": "^7.4.3"
+  }
+}

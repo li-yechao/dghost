@@ -53,6 +53,9 @@ importers:
       get-port:
         specifier: ^7.1.0
         version: 7.1.0
+      ghost_installer:
+        specifier: file:./ghost_installer-0.0.1.tgz
+        version: file:ghost_installer-0.0.1.tgz
       tar:
         specifier: ^7.4.3
         version: 7.4.3
@@ -3281,6 +3284,10 @@ packages:
     resolution: {integrity: sha512-xa+wSEoqPKzZVDCqx7rTCibDd3K98VpDYgUyNimOIqT0fqNhpi2OqKOKPHJTcByewvNAUFf4/qN9vg4JRA1pvw==}
     engines: {node: ^12.22.1 || ^14.17.0 || ^16.13.0 || ^18.0.0 || ^20.11.1}
     hasBin: true
+
+  ghost_installer@file:ghost_installer-0.0.1.tgz:
+    resolution: {integrity: sha512-rSCGRsaORwrSpqAy8/KPNpMy5wdB5G4ZRY4mzB6VPSVzwv2yEBzuSWme4uraXgE7L8Q7/WSnhcC44dn/+oostw==, tarball: file:ghost_installer-0.0.1.tgz}
+    version: 0.0.1
 
   giget@1.2.3:
     resolution: {integrity: sha512-8EHPljDvs7qKykr6uw8b+lqLiUc/vUg+KVTI0uND4s63TdsZM2Xus3mflvF0DDG9SiM4RlCkFGL+7aAjRmV7KA==}
@@ -9903,6 +9910,10 @@ snapshots:
       - supports-color
       - zen-observable
       - zenObservable
+
+  ghost_installer@file:ghost_installer-0.0.1.tgz:
+    dependencies:
+      tar: 7.4.3
 
   giget@1.2.3:
     dependencies:

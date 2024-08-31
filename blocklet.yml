@@ -20,8 +20,8 @@ files:
   - dist
   - logo.png
   - screenshots
-  - api/hooks/pre-start.js
   - ghost-5.90.1.tgz
+  - ghost_installer-0.0.1.tgz
 interfaces:
   - type: web
     name: publicUrl
@@ -44,7 +44,6 @@ requirements:
   os: '*'
   cpu: '*'
 scripts:
-  preStart: node api/hooks/pre-start.js
   dev: npm run start
 environments: []
 capabilities: {}
