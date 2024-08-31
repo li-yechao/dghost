@@ -1,8 +1,10 @@
-import { useState } from 'react';
-import reactLogo from '../assets/react.svg';
-import blockletLogo from '../assets/blocklet.svg';
-import viteLogo from '../assets/vite.svg';
 import './home.css';
+
+import { useState } from 'react';
+
+import blockletLogo from '../assets/blocklet.svg';
+import reactLogo from '../assets/react.svg';
+import viteLogo from '../assets/vite.svg';
 import api from '../libs/api';
 
 function Home() {
