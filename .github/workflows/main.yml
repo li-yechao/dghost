@@ -31,7 +31,8 @@ jobs:
         uses: blocklet/action-workflow@v1
         with:
           skip-upload: false
-          skip-deploy: true
+          skip-readme: true
+          skip-release: true
           bundle-command: pnpm bundle
           store-endpoint: ${{ secrets.STORE_ENDPOINT }}
           store-access-token: ${{ secrets.STORE_ACCESS_TOKEN }}
