@@ -28,7 +28,7 @@ const ghostBlockletsDir = resolve(serverDir, 'blocklets/z2qaL6E9od1SFDfKP8d9zAWP
 
     mkdirSync(ghostSrcDir, { recursive: true });
     await x({ file: archive, cwd: ghostSrcDir, strip: 1 });
-    spawnSync('npx', ['-y', 'yarn', 'install', '--production', '--ignore-engines'], {
+    spawnSync('npx', ['-y', 'yarn', 'install', '--production', '--ignore-engines', '--update-checksums'], {
       cwd: ghostSrcDir,
       stdio: ['ignore', 'inherit', 'inherit'],
     });
