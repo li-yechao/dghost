@@ -18,8 +18,8 @@ importers:
         specifier: ^1.7.1
         version: 1.7.1
       '@blocklet/sdk':
-        specifier: ^1.16.30
-        version: 1.16.30(encoding@0.1.13)
+        specifier: ^1.16.31
+        version: 1.16.31(encoding@0.1.13)
       '@ocap/client':
         specifier: ^1.18.135
         version: 1.18.135(encoding@0.1.13)
@@ -70,8 +70,8 @@ importers:
         specifier: ^0.3.2
         version: 0.3.2(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.3)(react@18.3.1)(typescript@5.5.4)
       '@blocklet/js-sdk':
-        specifier: ^1.16.30
-        version: 1.16.30
+        specifier: ^1.16.31
+        version: 1.16.31
       '@types/cookie-parser':
         specifier: ^1.4.7
         version: 1.4.7
@@ -88,8 +88,8 @@ importers:
         specifier: ^1.6.6
         version: 1.6.6
       '@types/node':
-        specifier: ^20.16.2
-        version: 20.16.2
+        specifier: ^20.16.3
+        version: 20.16.3
       '@types/react':
         specifier: ^18.3.5
         version: 18.3.5
@@ -98,7 +98,7 @@ importers:
         version: 18.3.0
       '@vitejs/plugin-react':
         specifier: ^4.3.1
-        version: 4.3.1(vite@5.4.2(@types/node@20.16.2))
+        version: 4.3.1(vite@5.4.2(@types/node@20.16.3))
       bumpp:
         specifier: ^9.5.2
         version: 9.5.2
@@ -112,8 +112,8 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0
       lint-staged:
-        specifier: ^15.2.9
-        version: 15.2.9
+        specifier: ^15.2.10
+        version: 15.2.10
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -140,25 +140,25 @@ importers:
         version: 2.11.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@20.16.2)(typescript@5.5.4)
+        version: 10.9.2(@types/node@20.16.3)(typescript@5.5.4)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
       vite:
         specifier: ^5.4.2
-        version: 5.4.2(@types/node@20.16.2)
+        version: 5.4.2(@types/node@20.16.3)
       vite-node:
         specifier: ^2.0.5
-        version: 2.0.5(@types/node@20.16.2)
+        version: 2.0.5(@types/node@20.16.3)
       vite-plugin-blocklet:
         specifier: ^0.9.4
-        version: 0.9.4(rollup@4.21.0)(vite@5.4.2(@types/node@20.16.2))
+        version: 0.9.4(rollup@4.21.0)(vite@5.4.2(@types/node@20.16.3))
       vite-plugin-svgr:
         specifier: ^4.2.0
-        version: 4.2.0(rollup@4.21.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.2))
+        version: 4.2.0(rollup@4.21.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.3))
       vite-tsconfig-paths:
         specifier: 4.3.2
-        version: 4.3.2(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.2))
+        version: 4.3.2(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.3))
       zx:
         specifier: ^8.1.5
         version: 8.1.5
@@ -310,8 +310,14 @@ packages:
   '@abtnode/client@1.16.30':
     resolution: {integrity: sha512-HQ/9d0rkWe6Qm3jV2v/fJsYQzbk9x3SK83pNNnjpvWckiyzvY6UbF6cYZBIu9VhmygP/5RWSWhJJjMHCnWO9rw==}
 
+  '@abtnode/client@1.16.31':
+    resolution: {integrity: sha512-9c14SyS8H3plQWNNZiI1Xnnlgwk5FA84afhd6cGwBMw5Io5OEaSnSGBiiLVkWZSckQ1LJPFlqJ3N21REtcOCkQ==}
+
   '@abtnode/constant@1.16.30':
     resolution: {integrity: sha512-IzWhrhU5rovHQrhMFltFqcBcVJaHxWz6ZclpMMV2VkYKa4H4ZbX4axKD0k+PKuJTWTLhv4vsy97X8pNpPMfuDA==}
+
+  '@abtnode/constant@1.16.31':
+    resolution: {integrity: sha512-OQdYGsYY9qdOL575WLaw7KM8UYuVdC5Nk/6iwzlXN1sNgPJOV5cAt4eG3oX4rRsG/sC6FwWyWu7bPI2DGoSOEQ==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -334,6 +340,9 @@ packages:
 
   '@arcblock/did-ext@1.18.132':
     resolution: {integrity: sha512-Mv0GE6jCyykhDic99s0UWMBqdEK2EbJKTilxcao/D19IsX4Evdmg7HOPZVFfaNN2RRlDe61Q99G7DysjIPQrqA==}
+
+  '@arcblock/did-ext@1.18.135':
+    resolution: {integrity: sha512-vILKH2LJ5gOilwzi8aZHFu0+m85k5X+OGLZ8wOeqW1os4txDB/tIyK7wIPgDH6lEfGvHK6RP55AnQbo2P+pfSQ==}
 
   '@arcblock/did-util@1.18.132':
     resolution: {integrity: sha512-ta1eIgLzhcawoKC2EF5Ry4p6xMxkflVnxNSZzo4plrzvnlBIXnAVXnWvQu0mko7py20m26Er/kViLalXxa0qNA==}
@@ -510,17 +519,32 @@ packages:
   '@blocklet/constant@1.16.30':
     resolution: {integrity: sha512-fzeWW1tBD6o4rOQNuxMUZuZbpV0VA529TkdvNvEktLE0i6e29ownwIY4e2qTUF4H8TgkQcEIu3fT5z4cq+Cxzw==}
 
+  '@blocklet/constant@1.16.31':
+    resolution: {integrity: sha512-PG6IX3Dw+fmltRkWD+NzE4kSE6t+puyV67J+ILeM3tiMB7xblhp/ZTUBCS9s2U2tko9zLMqRO5uZsWHaxHzUsg==}
+
   '@blocklet/env@1.16.30':
     resolution: {integrity: sha512-FB+a6pZfI84PHTBxb+mqMADLMDR1GJkHqBsLi7BC4cRddDxQwKIM/cQSATBY3qCYyb6au/W0Ynn1FCOcV4X2hw==}
+
+  '@blocklet/env@1.16.31':
+    resolution: {integrity: sha512-6Omc1AcXTe2E6civwp2gM7C9cfuXccyfo8laD8eCD+TjuFUVG9i1WpMW3ETfO2PAuyqSOm/XYXOd4Xf1ngZcnA==}
 
   '@blocklet/js-sdk@1.16.30':
     resolution: {integrity: sha512-peXl5QZbXvxE1F6v7Q1F+r+rwLsxx57lK2qe+eOXQHouFQT3AURA0Vpv6nMwSD2bqkQUTvKh4y/RuBTc2jU6LQ==}
 
+  '@blocklet/js-sdk@1.16.31':
+    resolution: {integrity: sha512-z+eow9xQu+eOQIkQ4BWOlG36JUmfxu8I2/Vtj3zqSUIkWCi8kHvoSlqRnKLOtwJvMQLMrotxdBPGYWmOp4w/Ow==}
+
   '@blocklet/meta@1.16.30':
     resolution: {integrity: sha512-dBiL7rJ2Hr+JN4FOAaKY0ZfwmHiiFE62HWJqiuio4Sh5qJSSHLIDvpLB+XDumD/GV4cdN5PcIP9Pbin3sLUS/A==}
 
+  '@blocklet/meta@1.16.31':
+    resolution: {integrity: sha512-hOiaT2zZYgdNmVCt25Uf2OFwyufuyygRxSsPN2zJYD4SpnI2l8At309+jypJaOL53gWGMsmRbZY+JH7sNO9zWQ==}
+
   '@blocklet/sdk@1.16.30':
     resolution: {integrity: sha512-DI583Fy6bXf+WVKETDopUXZm0d1LSgWJ2wWFMt3Jq8UdwkIfZb005CjvGpdBy6V8+HonlS08NIauIfwt+TU6Sw==}
+
+  '@blocklet/sdk@1.16.31':
+    resolution: {integrity: sha512-HEjBd6nx3JcuqIzvfUFZXy/ACFrO1GkHLIhnqDcoW85VCoyTiw3zSjLikVQDWoHWScSkC1pIXjElrl17U0mJZg==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -1691,8 +1715,8 @@ packages:
   '@types/node@20.16.1':
     resolution: {integrity: sha512-zJDo7wEadFtSyNz5QITDfRcrhqDvQI1xQNQ0VoizPjM/dVAODqqIUWbJPkvsxmTI0MYRGRikcdjMPhOssnPejQ==}
 
-  '@types/node@20.16.2':
-    resolution: {integrity: sha512-91s/n4qUPV/wg8eE9KHYW1kouTfDk2FPGjXbBMfRWP/2vg1rCXNQL1OCabwGs0XSdukuK+MwCDXE30QpSeMUhQ==}
+  '@types/node@20.16.3':
+    resolution: {integrity: sha512-/wdGiWRkMOm53gAsSyFMXFZHbVg7C6CbkrzHNpaHoYfsUWPg7m6ZRKtvQjgvQ9i8WT540a3ydRlRQbxjY30XxQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -4015,6 +4039,11 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
+  lint-staged@15.2.10:
+    resolution: {integrity: sha512-5dY5t743e1byO19P9I4b3x8HJwalIznL5E1FWYnU6OWw33KxNBSLAc6Cy7F2PsFEO8FKnLwjwm5hx7aMF0jzZg==}
+    engines: {node: '>=18.12.0'}
+    hasBin: true
+
   lint-staged@15.2.9:
     resolution: {integrity: sha512-BZAt8Lk3sEnxw7tfxM7jeZlPRuT4M68O0/CwZhhaw6eeWu0Lz5eERE3m386InivXB64fp/mDID452h48tvKlRQ==}
     engines: {node: '>=18.12.0'}
@@ -5984,7 +6013,25 @@ snapshots:
       - encoding
       - supports-color
 
+  '@abtnode/client@1.16.31(encoding@0.1.13)':
+    dependencies:
+      '@arcblock/sdk-util': 0.34.3(encoding@0.1.13)
+      '@ocap/util': 1.18.135
+      '@ocap/wallet': 1.18.135
+      axios: 1.7.7(debug@4.3.6)
+      blueimp-md5: 2.19.0
+      core-js: 3.38.1
+      debug: 4.3.6
+      eventemitter3: 4.0.7
+      lodash: 4.17.21
+      react-app-polyfill: 1.0.6
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+
   '@abtnode/constant@1.16.30': {}
+
+  '@abtnode/constant@1.16.31': {}
 
   '@ampproject/remapping@2.3.0':
     dependencies:
@@ -6068,6 +6115,19 @@ snapshots:
       '@ocap/mcrypto': 1.18.132
       '@ocap/util': 1.18.132
       '@ocap/wallet': 1.18.132
+      '@wangshijun/hdkey': 2.0.5
+      bn.js: 5.2.1
+      debug: 4.3.6
+      lodash: 4.17.21
+    transitivePeerDependencies:
+      - supports-color
+
+  '@arcblock/did-ext@1.18.135':
+    dependencies:
+      '@arcblock/did': 1.18.135
+      '@ocap/mcrypto': 1.18.135
+      '@ocap/util': 1.18.135
+      '@ocap/wallet': 1.18.135
       '@wangshijun/hdkey': 2.0.5
       bn.js: 5.2.1
       debug: 4.3.6
@@ -6516,14 +6576,32 @@ snapshots:
 
   '@blocklet/constant@1.16.30': {}
 
+  '@blocklet/constant@1.16.31': {}
+
   '@blocklet/env@1.16.30':
     dependencies:
       '@blocklet/constant': 1.16.30
+
+  '@blocklet/env@1.16.31':
+    dependencies:
+      '@blocklet/constant': 1.16.31
 
   '@blocklet/js-sdk@1.16.30':
     dependencies:
       '@abtnode/constant': 1.16.30
       '@blocklet/meta': 1.16.30
+      axios: 1.7.7(debug@4.3.6)
+      js-cookie: 3.0.5
+      quick-lru: 7.0.0
+      ufo: 1.5.4
+    transitivePeerDependencies:
+      - debug
+      - supports-color
+
+  '@blocklet/js-sdk@1.16.31':
+    dependencies:
+      '@abtnode/constant': 1.16.31
+      '@blocklet/meta': 1.16.31
       axios: 1.7.7(debug@4.3.6)
       js-cookie: 3.0.5
       quick-lru: 7.0.0
@@ -6545,6 +6623,43 @@ snapshots:
       '@ocap/types': 1.18.132
       '@ocap/util': 1.18.132
       '@ocap/wallet': 1.18.132
+      ajv: 8.17.1
+      axios: 1.7.7(debug@4.3.6)
+      cjk-length: 1.0.0
+      debug: 4.3.6
+      fs-extra: 11.2.0
+      hosted-git-info: 3.0.8
+      hpagent: 1.2.0
+      is-absolute-url: 3.0.3
+      is-glob: 4.0.3
+      is-var-name: 2.0.0
+      joi: 17.12.2
+      joi-extension-semver: 5.0.0(joi@17.12.2)
+      js-yaml: 4.1.0
+      json-stable-stringify: 1.1.1
+      lodash: 4.17.21
+      p-limit: 3.1.0
+      promise.any: 2.0.6
+      slugify: 1.6.6
+      ufo: 1.5.4
+      utility-types: 3.11.0
+      validate-npm-package-name: 3.0.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@blocklet/meta@1.16.31':
+    dependencies:
+      '@abtnode/constant': 1.16.31
+      '@arcblock/did': 1.18.135
+      '@arcblock/did-ext': 1.18.135
+      '@arcblock/did-util': 1.18.135
+      '@arcblock/jwt': 1.18.135
+      '@blocklet/constant': 1.16.31
+      '@ocap/asset': 1.18.135
+      '@ocap/mcrypto': 1.18.135
+      '@ocap/types': 1.18.135
+      '@ocap/util': 1.18.135
+      '@ocap/wallet': 1.18.135
       ajv: 8.17.1
       axios: 1.7.7(debug@4.3.6)
       cjk-length: 1.0.0
@@ -6603,16 +6718,50 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  '@blocklet/sdk@1.16.31(encoding@0.1.13)':
+    dependencies:
+      '@abtnode/client': 1.16.31(encoding@0.1.13)
+      '@abtnode/constant': 1.16.31
+      '@arcblock/did': 1.18.135
+      '@arcblock/did-auth': 1.18.135(encoding@0.1.13)
+      '@arcblock/jwt': 1.18.135
+      '@arcblock/ws': 1.18.135
+      '@blocklet/constant': 1.16.31
+      '@blocklet/env': 1.16.31
+      '@blocklet/meta': 1.16.31
+      '@did-connect/authenticator': 2.2.4
+      '@did-connect/handler': 2.2.4
+      '@nedb/core': 2.1.5
+      '@ocap/mcrypto': 1.18.135
+      '@ocap/wallet': 1.18.135
+      axios: 1.7.7(debug@4.3.6)
+      cheerio: 1.0.0-rc.12
+      fs-extra: 11.2.0
+      joi: 17.12.2
+      json-stable-stringify: 1.1.1
+      lodash: 4.17.21
+      lru-cache: 6.0.0
+      semver: 7.6.3
+      sitemap: 8.0.0
+      ufo: 1.5.4
+      wait-port: 1.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - encoding
+      - supports-color
+      - utf-8-validate
+
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
   '@did-connect/authenticator@2.2.4':
     dependencies:
-      '@arcblock/did': 1.18.133
-      '@arcblock/jwt': 1.18.133
+      '@arcblock/did': 1.18.135
+      '@arcblock/jwt': 1.18.135
       '@did-connect/types': 2.2.4
-      '@ocap/util': 1.18.133
+      '@ocap/util': 1.18.135
       '@ocap/wallet': 1.18.135
       debug: 4.3.6
       lodash: 4.17.21
@@ -6621,14 +6770,14 @@ snapshots:
 
   '@did-connect/handler@2.2.4':
     dependencies:
-      '@arcblock/did': 1.18.133
-      '@arcblock/jwt': 1.18.133
-      '@arcblock/ws': 1.18.133
+      '@arcblock/did': 1.18.135
+      '@arcblock/jwt': 1.18.135
+      '@arcblock/ws': 1.18.135
       '@did-connect/authenticator': 2.2.4
       '@did-connect/storage': 2.2.4
       '@did-connect/types': 2.2.4
       '@ocap/mcrypto': 1.18.135
-      '@ocap/util': 1.18.133
+      '@ocap/util': 1.18.135
       axios: 0.27.2
       lodash: 4.17.21
       object-hash: 3.0.0
@@ -6648,7 +6797,7 @@ snapshots:
 
   '@did-connect/types@2.2.4':
     dependencies:
-      '@arcblock/validator': 1.18.133
+      '@arcblock/validator': 1.18.135
       '@ocap/mcrypto': 1.18.135
       joi: 17.13.3
     transitivePeerDependencies:
@@ -7950,7 +8099,7 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
 
   '@types/cacheable-request@6.0.3':
     dependencies:
@@ -7961,7 +8110,7 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
 
   '@types/cookie-parser@1.4.7':
     dependencies:
@@ -7969,7 +8118,7 @@ snapshots:
 
   '@types/cors@2.8.17':
     dependencies:
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
 
   '@types/dotenv-flow@3.3.3': {}
 
@@ -7981,7 +8130,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.5':
     dependencies:
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -7996,7 +8145,7 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
     optional: true
 
   '@types/http-cache-semantics@4.0.4': {}
@@ -8005,13 +8154,13 @@ snapshots:
 
   '@types/http-proxy@1.17.15':
     dependencies:
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
 
   '@types/json5@0.0.29': {}
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
     optional: true
 
   '@types/keyv@3.1.4':
@@ -8026,7 +8175,7 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@types/node@20.16.2':
+  '@types/node@20.16.3':
     dependencies:
       undici-types: 6.19.8
 
@@ -8058,17 +8207,17 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
 
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
 
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
       '@types/send': 0.17.4
 
   '@types/yauzl@2.10.3':
@@ -8208,14 +8357,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-react@4.3.1(vite@5.4.2(@types/node@20.16.2))':
+  '@vitejs/plugin-react@4.3.1(vite@5.4.2(@types/node@20.16.3))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.25.2)
       '@babel/plugin-transform-react-jsx-source': 7.24.7(@babel/core@7.25.2)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.2(@types/node@20.16.2)
+      vite: 5.4.2(@types/node@20.16.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -10931,6 +11080,21 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
+  lint-staged@15.2.10:
+    dependencies:
+      chalk: 5.3.0
+      commander: 12.1.0
+      debug: 4.3.6
+      execa: 8.0.1
+      lilconfig: 3.1.2
+      listr2: 8.2.4
+      micromatch: 4.0.8
+      pidtree: 0.6.0
+      string-argv: 0.3.2
+      yaml: 2.5.0
+    transitivePeerDependencies:
+      - supports-color
+
   lint-staged@15.2.9:
     dependencies:
       chalk: 5.3.0
@@ -12584,14 +12748,14 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  ts-node@10.9.2(@types/node@20.16.2)(typescript@5.5.4):
+  ts-node@10.9.2(@types/node@20.16.3)(typescript@5.5.4):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
       acorn: 8.12.1
       acorn-walk: 8.3.3
       arg: 4.1.3
@@ -12784,13 +12948,13 @@ snapshots:
       - supports-color
       - terser
 
-  vite-node@2.0.5(@types/node@20.16.2):
+  vite-node@2.0.5(@types/node@20.16.3):
     dependencies:
       cac: 6.7.14
       debug: 4.3.6
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.4.2(@types/node@20.16.2)
+      vite: 5.4.2(@types/node@20.16.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -12823,7 +12987,7 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-plugin-blocklet@0.9.4(rollup@4.21.0)(vite@5.4.2(@types/node@20.16.2)):
+  vite-plugin-blocklet@0.9.4(rollup@4.21.0)(vite@5.4.2(@types/node@20.16.3)):
     dependencies:
       '@arcblock/did': 1.18.135
       '@ocap/mcrypto': 1.18.135
@@ -12837,8 +13001,8 @@ snapshots:
       rollup-plugin-external-globals: 0.12.0(rollup@4.21.0)
       semver: 7.6.3
       ufo: 1.5.4
-      vite: 5.4.2(@types/node@20.16.2)
-      vite-plugin-node-polyfills: 0.22.0(rollup@4.21.0)(vite@5.4.2(@types/node@20.16.2))
+      vite: 5.4.2(@types/node@20.16.3)
+      vite-plugin-node-polyfills: 0.22.0(rollup@4.21.0)(vite@5.4.2(@types/node@20.16.3))
       yaml: 2.5.0
     transitivePeerDependencies:
       - rollup
@@ -12852,11 +13016,11 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  vite-plugin-node-polyfills@0.22.0(rollup@4.21.0)(vite@5.4.2(@types/node@20.16.2)):
+  vite-plugin-node-polyfills@0.22.0(rollup@4.21.0)(vite@5.4.2(@types/node@20.16.3)):
     dependencies:
       '@rollup/plugin-inject': 5.0.5(rollup@4.21.0)
       node-stdlib-browser: 1.2.0
-      vite: 5.4.2(@types/node@20.16.2)
+      vite: 5.4.2(@types/node@20.16.3)
     transitivePeerDependencies:
       - rollup
 
@@ -12871,12 +13035,12 @@ snapshots:
       - supports-color
       - typescript
 
-  vite-plugin-svgr@4.2.0(rollup@4.21.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.2)):
+  vite-plugin-svgr@4.2.0(rollup@4.21.0)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.3)):
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.21.0)
       '@svgr/core': 8.1.0(typescript@5.5.4)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.5.4))
-      vite: 5.4.2(@types/node@20.16.2)
+      vite: 5.4.2(@types/node@20.16.3)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -12893,13 +13057,13 @@ snapshots:
       - supports-color
       - typescript
 
-  vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.2)):
+  vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.3)):
     dependencies:
       debug: 4.3.6
       globrex: 0.1.2
       tsconfck: 3.1.1(typescript@5.5.4)
     optionalDependencies:
-      vite: 5.4.2(@types/node@20.16.2)
+      vite: 5.4.2(@types/node@20.16.3)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -12913,13 +13077,13 @@ snapshots:
       '@types/node': 20.16.1
       fsevents: 2.3.3
 
-  vite@5.4.2(@types/node@20.16.2):
+  vite@5.4.2(@types/node@20.16.3):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.41
       rollup: 4.21.0
     optionalDependencies:
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
       fsevents: 2.3.3
 
   vm-browserify@1.1.2: {}
@@ -13096,4 +13260,4 @@ snapshots:
   zx@8.1.5:
     optionalDependencies:
       '@types/fs-extra': 11.0.4
-      '@types/node': 20.16.2
+      '@types/node': 20.16.3
