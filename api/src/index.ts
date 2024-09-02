@@ -4,12 +4,13 @@ import { join } from 'path';
 
 import { getComponentMountPoint } from '@blocklet/sdk';
 import { env } from '@blocklet/sdk/lib/config';
+import { user } from '@blocklet/sdk/lib/middlewares';
 import cors from 'cors';
 import dotenv from 'dotenv-flow';
 import express from 'express';
 import proxy from 'express-http-proxy';
 import getPort from 'get-port';
-import { hasTrailingSlash, joinURL, parseURL, withTrailingSlash } from 'ufo';
+import { hasTrailingSlash, joinURL, parseURL, withQuery, withTrailingSlash } from 'ufo';
 
 import { GHOST_BLOCKLET_DID } from './constants';
 import { authClient } from './libs/auth';
@@ -25,6 +26,28 @@ export const app = express();
 let proxyToGhost: ReturnType<typeof proxy> | undefined;
 
 app.use(cors());
+
+// redirect to login page if user is not logged in
+app.use('/ghost', user(), (req, res, next) => {
+  const mountPoint = getComponentMountPoint(GHOST_BLOCKLET_DID);
+
+  if (!req.user?.did) {
+    res.redirect(
+      withQuery('/.well-known/service/login', {
+        redirect: withQuery(joinURL(mountPoint, req.originalUrl), req.query),
+      }),
+    );
+    return;
+  }
+
+  // only allow user with permission to access the dashboard
+  if (!['admin', 'owner', 'member'].includes(req.user.role)) {
+    res.redirect(mountPoint);
+    return;
+  }
+
+  next();
+});
 
 app.use('/', (req, res, next) => {
   if (proxyToGhost) {
